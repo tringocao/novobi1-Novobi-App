@@ -25,7 +25,7 @@
         "views/scheduler.xml",
 
     ],
-    'depends': ['sale_stock', 'auth_signup', 'website_sale','product','project','payment','sale','lunch','website'],
+    'depends': ['sale_stock', 'auth_signup', 'website_sale','product','project','payment','sale','lunch','website' ],
     'qweb': ['static/src/xml/*.xml'],
     'application': True,
 }
