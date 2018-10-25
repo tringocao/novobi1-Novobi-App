@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="day_menu_action" model="ir.actions.act_window">
+            <field name="name">Menu today</field>
+            <field name="res_model">lunch.menu</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="day_menu_view" model="ir.ui.view">
+            <field name="name">Menu Days</field>
+            <field name="model">lunch.menu</field>
+            <field name="arch" type="xml">
+                <tree string="List menu day">
+                    <field name="name"/>
+                    <field name="product_in_day"/>
+                </tree>
+            </field>
+        </record>
+        <record id="day_menu_form" model="ir.ui.view">
+            <field name="name">Menu Form</field>
+            <field name="model">lunch.menu</field>
+            <field name="arch" type="xml">
+                <form string="Menu Food">
+                    <sheet>
+                        <group>
+                            <field name="name" widget="radio"/>
+                            <field name="product_in_day">
+                                <tree editable="bottom">
+                                    <field name="name" ></field>
+                                    <field name="price" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <menuitem name="Menu Today" parent="lunch.menu_lunch_admin" id="day_menu_action_line"
+                  action="day_menu_action"/>
+
+    </data>
+</odoo>

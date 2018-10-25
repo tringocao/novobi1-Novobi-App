@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="home_link_back" name="crm assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!-- Planner assets -->
+                <script type="text/javascript" src="/lunch_order/static/src/js/FoodImg.js"></script>
+
+            </xpath>
+        </template>
+        <template id="home_link_front" name="My stylee" inherit_id="website.assets_frontend">
+            <xpath expr="link[last()]" position="after">
+                <!--<script type="text/javascript" src="/lunch_order/static/src/js/script.js"/>-->
+                <link rel="stylesheet" href="/lunch_order/static/src/fonts/fonts.css"/>
+                <link rel="stylesheet" href="/lunch_order/static/src/css/style.css"/>
+                <link rel="stylesheet" href="/lunch_order/static/src/css/app.css"/>
+                <link rel="stylesheet" href="/lunch_order/static/src/css/custom.css"/>
+                <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"/>-->
+                <script type="text/javascript" src="/lunch_order/static/src/js/modal.js"></script>
+                <script type="text/javascript" src="/lunch_order/static/src/js/confirm_response.js"></script>
+                <!--<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+                <script type="text/javascript" src="/lunch_order/static/src/js/script.js"></script>
+                <script type="text/javascript" src="/lunch_order/static/src/js/foody_product.js"></script>
+                <link rel="stylesheet" href="/lunch_order/static/src/css/ion.rangeSlider.css"/>
+                <link rel="stylesheet" href="/lunch_order/static/src/css/ion.rangeSlider.skinHTML5.css"/>
+
+
+                <!--<script type="text/javascript" src="//localhost:35729/livereload.js"/>-->
+
+            </xpath>
+        </template>
+
+
+
+
+        <template id="home_layout" name="home" inherit_id="portal.frontend_layout">
+            <xpath expr="//header" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+
+            <xpath expr="//footer" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//header" position="after">
+                <header>
+                    <!--Top menu-->
+                    <nav t-att-class="'navbar navbar-default top-menu' + (' on-home' if onhome else '')"
+                         id="home_lunch">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#">
+                                    <img src="/lunch_order/static/src/images/logo-300x54.png" alt=""></img>
+                                </a>
+                            </div>
+                            <!--Top menu options-->
+                            <div class="pull-right top-options">
+                                <a t-attf-href="{{request.httprequest.url_root}}lunch">Lunch</a>
+                                <a class="border" t-attf-href="{{request.httprequest.url_root}}foody">Foody</a>
+                                <t t-if="request.session.get('uid')">
+                                    <span>Hello,
+                                        <t t-esc="user_id.name"/>
+                                    </span>
+                                    <a t-attf-href="{{request.httprequest.url_root}}web/session/logout?redirect={{request.httprequest.url_root}}web/login">
+                                        Logout
+                                    </a>
+                                </t>
+                                <t t-else="">
+                                    <a t-attf-href="{{request.httprequest.url_root}}web/login">Sign up/Login</a>
+
+                                </t>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </header>
+
+            </xpath>
+            <!--<xpath expr="//main" position="after">-->
+            <!--<main>-->
+
+            <!--</xpath>-->
+            <!--App footer-->
+            <xpath expr="//footer" position="after">
+                <footer>
+
+                    <!--site map-->
+                    <div class="sitemap">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="title">Services</div>
+                                    <ul>
+                                        <li>
+                                            <a href="https://novobi.com/odoo-erp/">Enterprise Resource Planning</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://novobi.com/hybris-ecommerce/analytics/">Data Analytics</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://novobi.com/cloud-enablement/">Cloud Computing</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="title">Our Company</div>
+                                    <ul>
+                                        <li>
+                                            <a href="https://novobi.com/about-us/">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://novobi.com/management-team/">Management Team</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://novobi.com/vision-and-core-values/">Vision and Core
+                                                Values
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="title">Support</div>
+                                    <ul>
+                                        <li>
+                                            <a href="https://novobi.com/contact-us/">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://novobi.com/contact-us/">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="title">Follow Us</div>
+                                    <div class="social-list">
+                                        <a href="https://twitter.com/novobi">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/novobi">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <img class="verisign" src="/lunch_order/static/src/images/verisign.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of site map-->
+                </footer>
+            </xpath>
+        </template>
+        <template id="layoutts" name="Layout" inherit_id="website.layout">
+
+            <!--Hidden header-->
+            <xpath expr="//div[@id='wrapwrap']" position="attributes">
+                <attribute name="style">
+                    background-image: url("/lunch_order/static/src/images/Midlife-header_one.jpg");
+                    height: 100%;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                </attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

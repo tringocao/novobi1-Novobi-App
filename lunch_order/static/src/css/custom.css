@@ -1,0 +1,109 @@
+.home-introduction .popular-coach-types .coach-type img{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    object-fit: cover;
+}
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+/* Blue */
+.info {
+    color: dodgerblue;
+}
+
+.input-group{
+    display: initial;
+}
+.top-menu .top-options span {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 19px;
+  display: inline-block;
+  margin-left: 10px; }
+
+.search-box{
+    height: auto;
+  background: #c5a26f;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 0px;
+}
+.top-menu .navbar-brand img {
+    padding: 10px 10px;
+  display: block; }
+.top-menu.on-home {
+  background: #ec971f12;
+  position: absolute;
+  top: 0px; }
+
+.top-menu.on-home.fixed {
+  background: #8a6d3be8;
+  position: fixed;
+  top: 0px;
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  transistion: translate 0.5 ease-in-out; }
+.orderbtn:hover {
+    color: #ff3d15 !important;
+}
+.top-menu {
+      background: #48433b;
+
+}
+
+.booking-wrapper .panel-booking-summary .panel-footer {
+  background: #8a6d3b;
+ }
+.coach-info-summarize .body {
+  background: url("/images/coach-summarize-bg.png") no-repeat 130px 30px #48433b; }
+
+.coach-info-summarize .header {
+
+  background: #8a6d3b;
+ }
+.highlight-title {
+  color: #0075bf;
+}
+.btnConfirmm{
+    color: #ffffff;
+    background-color: #337ab7;
+}
+.panel-coach-detail.best .panel-heading{
+    background: #b98030;
+
+}
+.panel-title{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+.panel-coach-detail .panel-body .coach-tag {
+    background: #3983d8;
+        padding: 10px 10px;
+        font-size: 13px;
+
+}
+.panel-coach-detail .panel-body .coach-fullname{
+        color: #1b4a79;
+    font-weight: unset;
+
+}
+.editt img{
+    position: absolute;
+    top: -392px;
+    right: 0px;
+    left: 0px;
+}
+.btnfoody{
+    background-color: #4b8651;
+}

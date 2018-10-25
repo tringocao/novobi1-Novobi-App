@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="action_report_lunchrder_manager"
+                model="lunch.order"
+                string="Lunch Report"
+                report_type="qweb-pdf"
+                name="lunch_order.report_lunchrder_manager"
+                file="lunch_order.report_lunchrder_manager"
+                attachment_use="True"
+
+        />
+        <report
+                id="action_report_lunchrder_user"
+                model="lunch.order"
+                string="Lunch Report"
+                report_type="qweb-pdf"
+                name="lunch_order.report_lunchrder_user"
+                file="lunch_order.report_lunchrder_user"
+                attachment_use="True"
+
+        />
+        <template id="report_external_layout_standard" name="report" inherit_id="web.external_layout_standard">
+
+            <xpath expr="(//div[@class='header']/div[@class='row'])[1]" position="before">
+                <div class="row">
+                    <div class="col-xs-3 mb4">
+                        <img src="lunch_order/static/src/images/logo-300x54.png" style="max-height: 45px;"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@class='header']/div[@class='row']" position="attributes">
+                <attribute name="stype">display:none</attribute>
+            </xpath>
+
+            <xpath expr="//ul[hasclass('list-inline')]" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//div[@name='financial_infos']" position="before">
+                <ul class="list-inline mb4">
+                    <li>Phone: 512-522-28377</li>
+                    <li>Email: contact@novobi.com</li>
+                    <li>Web: www.novobi.comm</li>
+                </ul>
+            </xpath>
+        </template>
+
+
+        <template id="report_lunchrder_manager">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="page-header"/>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs" t-as="o">
+                                    <tr>
+                                        <td>
+                                            <span t-field="o[0].login"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="o[1]"/>
+
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <div>Total:
+                            <t t-esc="total_price"/>
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+        </template>
+        <template id="report_lunchrder_user">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="page-header"/>
+                        <t t-foreach="docs" t-as="o">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Date</td>
+                                    <td>Price</td>
+                                </tr>
+                                <t t-foreach="o.order_line_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="line.note"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.date"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.price"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                        <div>Total:
+                            <t t-esc="total_price"/>
+                        </div>
+
+                    </div>
+
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

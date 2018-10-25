@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="cart_review" name="Shopping Cart Review">
+            <div class="modal fade" id="cart_review_modal" role="dialog">
+                <div class="modal-dialog modal-lg box-popup-full ">
+                    <!-- Modal content-->
+                    <div class="modal-content box-center-popup">
+                        <div class="modal-header">
+                            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                            <h2 class="modal-title" style="color:#0079e2;">Review Order</h2>
+                            <p>This is all order rows you have requested. Check out now before confirm
+                            </p>
+                        </div>
+                        <div class="modal-body">
+                            <h6 class="Schedule_popup">Product</h6>
+                            <div class="box-popup">
+                                <div class="col-sm-7" id="showproduct">
+                                    <t t-call="lunch_order.lunch_cart_review_body"/>
+                                </div>
+                                <div class="col-sm-5 box-popup-checkout">
+                                    <a t-attf-href="{{request.httprequest.referrer}}/confirm"
+                                       class="btn book-btn btn-book btnSavee">Confirm
+                                    </a>
+                                    <a type="button" class="btn btn-default" data-dismiss="modal">Continue Searching
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </template>
+        <template id="lunch_cart_review_body">
+            <t t-foreach="order_line_id.order_line_ids" t-as="line">
+                <div t-att-class="'bg-schedule-popup'">
+                    <div class="col-sm-10 no-padding ">
+                        <h3 style="color:#b53e0f;">
+                            <t t-esc="line.note"/>
+                        </h3>
+                        <div class="col-sm-8 circle-box ">
+                            <img t-attf-src="{{request.httprequest.url_root}}web/image/lunch.order.line/{{line.id}}/img"
+                                 style="width:150px;height:150px;" alt=""/>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4> Price: <t t-esc="line.price"/> </h4>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-2 no-padding ">
+                            <div class="remove">
+                                <a class="btnremove" t-att-data-id="line.id">Remove</a>
+                            </div>
+                        </div>
+
+                </div>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>
+

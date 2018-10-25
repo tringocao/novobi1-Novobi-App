@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="foody_product_home" name="Product Homepage">
+            <t t-call="website.layout">
+                <!--<main>-->
+                <!--Banner on homepage-->
+                <div class="banner editt">
+                    <img src="/lunch_order/static/src/images/detective-games-mins.jpg" alt=""></img>
+                    <!--Text inside banner-->
+                    <div class="banner-text">
+                        <h1>Tea Time</h1>
+                        <h4>When I read about the evils of drinking, I gave up reading!
+                        </h4>
+                    </div>
+                </div>
+
+                <t t-set="additional_title">Foody</t>
+                <!--<div class="home-introduction">-->
+                <!--home-->
+                <!--<div id="wrap" class="js_sale">-->
+                <!--<div class="oe_structure"/>-->
+                <!--<div class="container oe_website_sale">-->
+                <!--<div class="products_pager">-->
+                <div class="container">
+                    <div class="coach-list">
+                        <t t-foreach="bins" t-as="tr_product">
+                            <div class="panel panel-default panel-coach-detail best">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <t t-esc="tr_product"/>
+                                    </h3>
+                                </div>
+                                <t t-foreach="bins[tr_product]" t-as="product">
+                                    <div class="panel-body foodyproduct">
+                                                                    <div id="place_modal"/>
+                                        <!--tag-->
+                                        <a type="button" class="coach-tag btnfoodypro" t-att-name="product.data['name']" t-att-src="product.data['image']" t-att-price="product.data['price']">Order</a>
+                                        <div class="clearfix">
+                                            <!--Coach avatar-->
+                                            <div class="coach-avatar">
+                                                <t t-if="product.data.get('image')">
+                                                    <img id ="imgs" t-att-src="product.data['image']"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <img id ="img" src="/lunch_order/static/src/images/ball.jpg"/>
+                                                </t>
+                                            </div>
+                                            <!--Coach information-->
+                                            <div class="col-lg-9">
+                                                <!--Coach name-->
+                                                <h3 class="coach-fullname">
+                                                    <t id="name" t-esc="product.data['name']"/>
+                                                </h3>
+                                                <!--Star rating-->
+                                                <div class="coach-rating">
+                                                    <!--Star count-->
+                                                    <span>
+                                                        <t t-esc="product.data['rating']"/>
+                                                    </span>
+                                                </div>
+                                                <!--end of Star rating-->
+                                                <!--Field and address-->
+                                                <div class="coach-address">
+                                                    <t id="price" t-esc="product.data['price']"/>
+                                                </div>
+                                                <!--end of Field and address-->
+                                            </div>
+                                        </div>
+                                        <!--end of Coach information-->
+                                    </div>
+                                </t>
+                            </div>
+
+                        </t>
+                        <t t-if="not bins">
+                            <div class="text-center text-muted oe_product">
+                                <h3 class="css_editable_display">No product defined.</h3>
+                            </div>
+                        </t>
+                    </div>
+
+                </div>
+
+                <!--</div>-->
+                <div class="oe_structure mb32"/>
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--endhome-->
+                <!--Main content-->
+                <div class="homepage-to-signup">
+                    <div class="container">
+                        <h3>Don’t hesitate and land your dream with coachplat today!</h3>
+                        <a class="btn btn-danger-lighter btn-lg" href="">Sign Up now</a>
+                    </div>
+                </div>
+                <!--End of main content-->
+                <!--</main>-->
+            </t>
+
+
+        </template>
+
+
+    </data>
+</odoo>

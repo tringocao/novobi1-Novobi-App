@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="lunch_confirm_view" name="Lunch Confirm">
+            <t t-call="website.layout">
+
+                <!--Main content-->
+                <div class="container booking-wrapper">
+                    <!--Coach info summarize-->
+                    <!--end of Coach info summarize-->
+
+                    <div class="col-lg-9">
+                        <div class="highlight-title">
+                            <span>Order Summary</span>
+                        </div>
+
+                        <!--Booking summary-->
+                        <div class="panel panel-default panel-booking-summary">
+                            <div class="panel-body">
+                                <!--Payment listing-->
+                                <ul class="list-unstyled booking-summary">
+                                    <t t-foreach="order.order_line_ids" t-as="line">
+                                        <li>
+                                            <span style="font-size:18px;font-weight:normal"><t t-esc="line.name"></t>
+
+                                                <span class="pull-right">
+                                                    <t t-esc="line.price"/>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    </t>
+
+                                </ul>
+                                <!--end of Payment listing-->
+                            </div>
+                            <!--Total payment-->
+                            <div class="panel-footer">
+                                <div class="clearfix">
+                                    <div class="pull-left">Your Total</div>
+                                    <div class="pull-right" t-field="order.total"></div>
+                                </div>
+                            </div>
+                            <!--end of Total payment-->
+                        </div>
+                        <!--end of Booking summary-->
+
+
+                        <p class="option-link checkout">
+                            <a t-att-data-id="order.id" id="btnConfirm" class="btn btn-primary btnConfirmm">Confirm</a>
+                            <a class="btn " t-attf-href="{{request.httprequest.url_root + here}}">Back</a>
+                        </p>
+                    </div>
+
+                    <div class="coach-info-summarize">
+                        <div class="header">Novobi Staff</div>
+                        <div class="body">
+                            <!--Coach info-->
+                            <div class="clearfix">
+                                <!--Coach avatar-->
+                                <!--end of avatar-->
+                                <div class="pull-left coach-info">
+                                    <!--Coach name-->
+                                    <h3 class="coach-fullname">
+                                        <t t-esc="user_id.name"/>
+                                    </h3>
+                                    <!--Star rating-->
+                                    <div class="coach-rating">
+                                        <span class="inline">
+                                            <span class="star-icon full">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span class="star-icon full">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span class="star-icon full">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span class="star-icon full">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                            <span class="star-icon full">
+                                                <i class="fa fa-star"></i>
+                                            </span>
+                                        </span>
+                                        <!--Star count-->
+                                    </div>
+                                    <!--field-->
+                                    <div class="coach-field">IT. Competitiveness Better Bussiness</div>
+                                </div>
+                            </div>
+                            <!--end of Coach info-->
+                            <!--Coach detail-->
+                            <ul class="list-unstyled coach-summarize-detail">
+                                <li class="address">Hochiminh City, Vietnam</li>
+                                <li class="birth">2008</li>
+                                <li class="gender">Multe</li>
+                                <li class="phone">512-522-2837</li>
+                                <li class="mail">contact@novobi.com</li>
+                            </ul>
+                            <!--end of Coach detail-->
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+
+
+        </template>
+
+    </data>
+</odoo>

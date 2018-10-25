@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="foody_home" name="Foody Homepage">
+
+            <t t-call="website.layout">
+                <!--<main>-->
+                <!--Banner on homepage-->
+                <div class="banner editt">
+                    <img src="/lunch_order/static/src/images/detective-games-mins.jpg" alt=""></img>
+                    <!--Text inside banner-->
+                    <div class="banner-text">
+                        <h1>Tea Time</h1>
+                        <h4>When I read about the evils of drinking, I gave up reading!
+                        </h4>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <div class="container">
+                        <!--Search form-->
+                        <form action="">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-lg-9">
+                                         <t t-call="website_sale.search">
+                                            <!--<t t-set="search_class"-->
+                                               <!--t-value="'pagination form-inline o_website_sale_search'"/>-->
+                                             <!--<t t-set="search_class"-->
+                                               <!--t-value="'pagination form-inline o_website_sale_search'"/>-->
+                                        </t>
+                                    </div>
+                                    <div class="row col-lg-3">
+                                        <button class="btn btnfoody btn-danger oe_search_button" type="submit" >Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Popular tags-->
+
+                        </form>
+                        <!--end of search form-->
+                    </div>
+                </div>
+                <t t-set="additional_title">Foody</t>
+                <div class="home-introduction">
+                    <!--home-->
+                    <div id="wrap" class="js_sale">
+                        <!--<div class="oe_structure"/>-->
+                        <div class="container oe_website_sale">
+                            <div class="products_pager">
+                                <div class="container">
+                                    <div class="popular-coach-types clearfix">
+                                        <t t-foreach="bins" t-as="tr_product">
+
+                                            <t t-foreach="tr_product" t-as="td_product">
+                                                <t t-set="product" t-value="td_product['product']"/>
+                                                <div class="col-lg-3">
+                                                    <div class="coach-type life foody">
+                                                        <div id="place_modal">
+
+                                                        </div>
+                                                        <img t-attf-src="{{product.data['ImageUrl']}}"
+                                                             alt=""/>
+                                                        <span class="type">
+                                                            <b>
+                                                                <span t-esc="product.data['PromotionTitle'] if product.data['PromotionTitle'] else None"
+                                                                     />
+                                                                <span itemprop="price"
+                                                                      style="display:none;"
+                                                                      t-esc="product.data['PromotionTitle']"/>
+                                                                <!--<span itemprop="priceCurrency"-->
+                                                                <!--style="display:none;"-->
+                                                                <!--t-esc="website.currency_id.name"/>-->
+                                                            </b>
+                                                        </span>
+                                                        <div class="description">
+                                                            <span>
+                                                                <t t-esc="product.data['RestaurantName']"/>
+                                                            </span>
+                                                            <a type="button" class="btn info foodybtn"
+                                                               data-toggle="modal"
+                                                               t-att-name="product.data['DetailUrl']">View
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </t>
+                                        </t>
+                                        <t t-if="not bins">
+                                            <div class="text-center text-muted oe_product">
+                                                <h3 class="css_editable_display">No product defined.</h3>
+                                            </div>
+                                        </t>
+                                    </div>
+
+                                </div>
+
+                                <div class="products_pager">
+                                    <t t-call="website.pager"/>
+                                </div>
+                            </div>
+                            <div class="oe_structure mb32"/>
+                        </div>
+                    </div>
+                </div>
+                <!--endhome-->
+                <!--Main content-->
+                <div class="homepage-to-signup">
+                    <div class="container">
+                        <h3>Don’t hesitate and land your dream with our lunch today!</h3>
+                        <a class="btn btn-danger-lighter btn-lg" href="">Sign Up now</a>
+                    </div>
+                </div>
+                <!--End of main content-->
+                <!--</main>-->
+            </t>
+
+
+        </template>
+
+        <template id="remove_search" name="search" inherit_id="website.website_search_box">
+           <xpath expr="//span[@class='input-group-btn']" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

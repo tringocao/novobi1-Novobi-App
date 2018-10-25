@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="lunch_img_view" model="ir.ui.view">
+            <field name="name">Lunch</field>
+            <field name="model">lunch.product</field>
+            <field name="inherit_id" ref="lunch.lunch_product_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <!-- Add your fields or attributes here -->
+                    <field name="img" widget="image" class="oe_avatar"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <!-- Add your fields or attributes here -->
+                    <button name="google_search" string="Write src" type="object" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

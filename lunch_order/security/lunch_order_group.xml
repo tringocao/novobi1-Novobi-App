@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="permission_view_group" model="ir.module.category">
+            <field name="name">Permission view</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="permission_position_group" model="ir.module.category">
+            <field name="name">Permission position</field>
+            <field name="sequence" eval="2"/>
+        </record>
+
+        <record id="customer" model="res.groups">
+            <field name="name">Customer</field>
+            <field name="category_id" ref="permission_position_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal')), (4, ref('base.group_public'))]"/>
+        </record>
+
+        <record id="manager" model="res.groups">
+            <field name="name">Sale Manager</field>
+            <field name="category_id" ref="permission_position_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_public'))]"/>
+        </record>
+
+        <!--==========================================================-->
+        <record id="saleable_view" model="res.groups">
+            <field name="name">Can edit view shop</field>
+            <field name="category_id" ref="permission_view_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+
+        <record id="internal_view" model="res.groups">
+            <field name="name">Show all</field>
+            <field name="category_id" ref="permission_view_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+        <record id="lunch_view" model="res.groups">
+            <field name="name">Show all</field>
+            <field name="category_id" ref="permission_view_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+    </data>
+</odoo>

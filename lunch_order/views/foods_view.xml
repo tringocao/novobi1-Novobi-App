@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="scheduler_time_view" model="ir.ui.view">
+            <field name="name">Scheduler_lunch</field>
+            <field name="model">lunch.alert</field>
+            <field name="inherit_id" ref="lunch.lunch_alert_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='end_hour']" position="after">
+                    <!-- Add your fields or attributes here -->
+
+                    <field name="func_type"/>
+                    <field name="announce_time" eval="DateTime.now()"/>
+                </xpath>
+
+
+                <xpath expr="//div[@name='button_box']" position="before">
+                    <!-- Add your fields or attributes here -->
+                    <header>
+                        <button name="start_scheduler" string="Start Scheduler" type="object" class="oe_highlight"/>
+                    </header>
+                </xpath>
+
+                <xpath expr="//field[@name='end_hour']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='start_hour']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="scheduler_time_list_view" model="ir.ui.view">
+            <field name="name">Scheduler_lunch_list</field>
+            <field name="model">lunch.alert</field>
+            <field name="inherit_id" ref="lunch.lunch_alert_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='end_hour']" position="after">
+                    <!-- Add your fields or attributes here -->
+
+                    <field name="func_type"/>
+                    <field name="announce_time" eval="DateTime.now()"/>
+                </xpath>
+                <xpath expr="//field[@name='end_hour']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='start_hour']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

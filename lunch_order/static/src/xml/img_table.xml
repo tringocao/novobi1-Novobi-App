@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ImgTableView">
+        <div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <th></th>
+                        <th>Title</th>
+
+                    </thead>
+                    <tbody>
+                        <t t-foreach="widget.items" t-as="item">
+                            <tr>
+                                <t t-set="link" t-value="item['link']"/>
+                                <td><input type="radio" name="selected" t-att-value="item['link']"/></td>
+                                <td> <img t-att-src="link" style="width:300px;height:300px"/></td>
+
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary btnUpdate" data-dismiss="modal">Select</button>
+                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </t>
+</templates>

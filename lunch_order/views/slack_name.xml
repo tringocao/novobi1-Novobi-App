@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="slack_name_view" model="ir.ui.view">
+            <field name="name">Slack_Name</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']/group" position="inside">
+                    <!-- Add your fields or attributes here -->
+                    <field name="slack_name"/>
+                </xpath>
+
+            </field>
+        </record>
+        <template id="slack_name_input" name="SlackName" inherit_id="auth_signup.fields">
+            <xpath expr="//div" position="after">
+                <div class="form-group field-login">
+                <label for="slack_name" class="control-label">Your Slack Name</label>
+                <input type="text" name="slack_name" t-att-value="slack_name" id="slack_name" class="form-control" autofocus="autofocus"
+                    autocapitalize="off" required="required" t-att-readonly="'readonly' if only_passwords else None"/>
+                </div>
+            </xpath>
+        </template>
+
+
+
+
+    </data>
+</odoo>

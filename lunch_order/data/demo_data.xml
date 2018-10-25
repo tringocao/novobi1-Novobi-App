@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="lunch_product_category_pet" model="lunch.product.category">
+            <field name="name">Pet Toyssssss</field>
+        </record>
+        <record id="product_product_9" model="lunch.product">
+            <field name="name">Mice</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">12.0</field>
+            <field name="description">consuddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/fish.jpg"/>
+        </record>
+
+        <record id="product_product_10" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+        <record id="product_product_11" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                <record id="product_product_12" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                <record id="product_product_13" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_14" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_15" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_16" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_17" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_18" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+        <record id="product_product_19" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+                        <record id="product_product_20" model="lunch.product">
+            <field name="name">Micedd</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">10.0</field>
+            <field name="description">consuddddddddddddddd</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+        <record id="product_product_21" model="lunch.product">
+            <field name="name">TeaBreak</field>
+            <field name="category_id" ref="lunch_product_category_pet"/>
+            <field name="price">0.0</field>
+            <field name="description">Name order</field>
+            <field name="img" type="base64" file="lunch_order/static/src/images/image-5.png"/>
+        </record>
+
+
+        <function model="ir.config_parameter" name="set_param" eval="('auth_signup.allow_uninvited', True)" />
+        <!--<record id="base.main_partner" model="res.partner">-->
+            <!--<field name="name">Novobi</field>-->
+            <!--<field name="company_name">Novobi</field>-->
+            <!--<field name="street">Hochiminh City, Vietnam</field>-->
+            <!--<field name="city">Hochiminh City</field>-->
+            <!--<field name="phone">512-522-2837</field>-->
+            <!--<field name="email">contact@novobi.com</field>-->
+            <!--<field name="website">www.novobi.com</field>-->
+            <!--<field name="image" type="base64" file=""/>-->
+        <!--</record>-->
+    </data>
+</openerp>
